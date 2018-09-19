@@ -23,14 +23,13 @@ pyltp 是 LTP 的 Python 封装，提供了分词，词性标注，命名实体�
 > 笔者的博客连接：[ltp︱基于ltp的无监督信息抽取模块（事件抽取/评论观点抽取）](https://blog.csdn.net/sinat_26917383/article/details/82760214)
 
 
-
 ----------
 
 # 1 信息抽取 - 搭配抽取
 
 ## 1.1 逻辑整理
 整个逻辑主要根据依存句法分析，笔者主要利用了以下的关系类型：
-![SBV，主谓关系](https://img-blog.csdn.net/20180919100905740?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2OTE3Mzgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](https://img-blog.csdn.net/20180919100905740?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2OTE3Mzgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
 
 那么笔者理解 + 整理后得到四类抽取类型：
 
@@ -78,58 +77,4 @@ pyltp 是 LTP 的 Python 封装，提供了分词，词性标注，命名实体�
 句子三：
 
 ![在这里插入图片描述](https://img-blog.csdn.net/20180919104254734?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2OTE3Mzgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-
-
-----------
-
-
-# 2 三元组事件抽取 + 因果事件抽取
-
-帮这位小伙伴打波广告~
-
-## 2.1 三元组事件抽取
-
-> 该模块主要利用了语义角色srl，先定位关键谓语，然后进行结构化解析，核心的语义角色为 A0-5 六种，A0
-> 通常表示动作的施事，A1通常表示动作的影响等，A2-5 根据谓语动词不同会有不同的语义含义。其余的15个语义角色为附加语义角色，如LOC， 表示地点，TMP，表示时间等（一些符号可见笔者另一篇博客：[python︱六款中文分词模块尝试:jieba、THULAC、SnowNLP、pynlpir、CoreNLP、pyLTP](https://blog.csdn.net/sinat_26917383/article/details/77067515)）。
-
-基于依存句法与语义角色标注的事件三元组抽取 文本表示一直是个重要问题，如何以清晰，简介的方式对一个文本信息进行有效表示是个长远的任务.我尝试过使用关键词，实体之间的关联关系，并使用textgrapher的方式进行展示，但以词作为文本信息单元表示这种效果不是特别好，所以，本项目想尝试从事件三元组的方式出发，对文本进行表示．
-项目地址：https://github.com/liuhuanyong/EventTriplesExtraction
-
-使用之后的效果：
-![在这里插入图片描述](https://img-blog.csdn.net/20180918170204284?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2OTE3Mzgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-
-
-![在这里插入图片描述](https://img-blog.csdn.net/20180918170250257?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2OTE3Mzgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-
-这边笔者觉得在结果之上，进行一些清洗的话，效果还是可以的，特别是事件性较强的，有效实体比较多的句子效果会比较好。当然，把这个用在评论中简直...
-
-## 2.2 因果事件抽取
-
-![在这里插入图片描述](https://img-blog.csdn.net/20180918175330481?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2OTE3Mzgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-
-主要包括以下几个步骤：
-
- - 1、因果知识库的构建。因果知识库的构建包括因果连词库，结果词库、因果模式库等。
- - 2、文本预处理。这个包括对文本进行噪声移除，非关键信息去除等。 
- - 3、因果事件抽取。这个包括基于因果模式库的因果对抽取。
- - 4、事件表示。这是整个因果图谱构建的核心问题，因为事件图谱本质上是联通的，如何选择一种恰当（短语、短句、句子主干）等方式很重要。
- - 5、事件融合。事件融合跟知识图谱中的实体对齐任务很像
- - 6、事件存储。事件存储是最后步骤，基于业务需求，可以用相应的数据库进行存储，比如图数据库等。
-
-**以下是运行结果：**
-
-![在这里插入图片描述](https://img-blog.csdn.net/20180918175524474?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2OTE3Mzgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-
-
-**整理之后的结果：**
-
-![在这里插入图片描述](https://img-blog.csdn.net/20180918175458344?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2OTE3Mzgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
-
-
-
-
-
-
-
-
 
