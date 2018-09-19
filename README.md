@@ -29,7 +29,7 @@ pyltp 是 LTP 的 Python 封装，提供了分词，词性标注，命名实体�
 
 ## 1.1 逻辑整理
 整个逻辑主要根据依存句法分析，笔者主要利用了以下的关系类型：
-![](https://img-blog.csdn.net/20180919100905740?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2OTE3Mzgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![](https://github.com/mattzheng/LtpExtraction/blob/master/pic/001.png)
 
 那么笔者理解 + 整理后得到四类抽取类型：
 
@@ -52,7 +52,7 @@ pyltp 是 LTP 的 Python 封装，提供了分词，词性标注，命名实体�
 > 案例句：艇仔粥料很足，香葱自己添加，很贴心。
 
 
-![在这里插入图片描述](https://img-blog.csdn.net/20180919102440812?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2OTE3Mzgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![在这里插入图片描述](https://github.com/mattzheng/LtpExtraction/blob/master/pic/002.png)
 
 表的解读，其中：
 
@@ -68,13 +68,13 @@ pyltp 是 LTP 的 Python 封装，提供了分词，词性标注，命名实体�
 
 句子一:
 
-![在这里插入图片描述](https://img-blog.csdn.net/20180919104151402?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2OTE3Mzgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![在这里插入图片描述](https://github.com/mattzheng/LtpExtraction/blob/master/pic/003.png)
 
 句子二：
 
-![在这里插入图片描述](https://img-blog.csdn.net/20180919104224957?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2OTE3Mzgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![在这里插入图片描述](https://github.com/mattzheng/LtpExtraction/blob/master/pic/004.png)
 
 句子三：
 
-![在这里插入图片描述](https://img-blog.csdn.net/20180919104254734?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2OTE3Mzgz/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)
+![在这里插入图片描述](https://github.com/mattzheng/LtpExtraction/blob/master/pic/005.png)
 
