@@ -78,3 +78,38 @@ pyltp 是 LTP 的 Python 封装，提供了分词，词性标注，命名实体�
 
 ![在这里插入图片描述](https://github.com/mattzheng/LtpExtraction/blob/master/pic/005.png)
 
+
+----------
+
+# 2 LTP的语义角色标注(Semantic Role Labeling,SRL)
+
+更新于20181113
+
+该模块是利用LTP中的SRL模块进行分析
+`
+print(SRLparsing(labeller,words,postags,ToAfter = ['TMP','A1','DIS']))
+
+----- 语义角色 -----
+
+([['ADV', ('最后', '打')], ['ADV', (['平均', '下来'], '便宜')], ['ADV', ('才', '便宜')], ['A0', ('40', '便宜')]], (True, ['40', '便宜', []]))
+
+`
+
+与句法模块相似，利用一些组合规则来进行信息抽取,主要以A0为主，A0 - 动作的施事,相当于动作的主体  
+此时可以理解为核心主语，然后去找主语的修饰，`TMP(时间),A1(动作的影响),DIS(标记语),PRP(目的)`。
+具体可见SRLparsing.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
