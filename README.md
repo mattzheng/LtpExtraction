@@ -88,6 +88,7 @@ pyltp 是 LTP 的 Python 封装，提供了分词，词性标注，命名实体�
 该模块是利用LTP中的SRL模块进行分析
 
 `
+
 print(SRLparsing(labeller,words,postags,ToAfter = ['TMP','A1','DIS']))
 
 ----- 语义角色 -----
