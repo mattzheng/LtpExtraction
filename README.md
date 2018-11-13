@@ -103,11 +103,11 @@ print(SRLparsing(labeller,words,postags,ToAfter = ['TMP','A1','DIS']))
 
 具体可见SRLparsing.py
 
+当然，实际使用的时候,发现会经常报错：
 
+    RuntimeError: CPU memory allocation failed
 
-
-
-
+因为用LTP跑这个耗时 + 耗内存，顶多只是试玩一下，不太利用用于大批量操作。
 
 
 
